@@ -7,6 +7,8 @@ package Ch1.sort;
  * © 2020 Feng Zhao All Rights Reserved
  */
 
+import my.common.utility.myUtil;
+
 /**
  * @description: 选择排序实现
  *
@@ -22,7 +24,7 @@ public class Code1_selectionSort {
     * @return: void
     * @Date: 25/7/20
     */
-    public void selectionSort(int[] array){
+    public static void selectionSort(int[] array){
         if (array == null || array.length < 2) {
             return;
         }
@@ -32,26 +34,9 @@ public class Code1_selectionSort {
             for (int i = cur + 1; i < array.length; i++) {
                 minIndex = array[i] < array[minIndex] ? i : minIndex;
             }
-            swap(array, cur, minIndex);
+            myUtil.arrayUnitSwap(array, cur, minIndex);
         }
     }
-
-    public static void swap(int[] arr, int i, int j) {
-        int tmp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = tmp;
-    }
-    // for test
-    public static void printArray(int[] arr) {
-        if (arr == null) {
-            return;
-        }
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i] + " ");
-        }
-        System.out.println();
-    }
-
 }
 
 
